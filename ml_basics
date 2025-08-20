@@ -365,3 +365,217 @@ Model Tuning
 Model Deployment
 
 Model Monitoring
+
+
+
+
+
+Machine Learning is a subset of AI where systems learn from data and make decisions without explicit programming.
+There are four main types of ML:
+
+Supervised Learning
+
+Unsupervised Learning
+
+Semi-Supervised Learning
+
+Reinforcement Learning
+
+🔹 1. Supervised Learning
+
+The model is trained on labeled data.
+👉 Labeled Data = input with correct output provided.
+Example: “Email content” → label: spam / not spam.
+
+Goal: Learn a mapping from input → output.
+
+Data is split into Training set (to learn) and Testing set (to check accuracy).
+
+Objective: Minimize error between predicted output vs actual output.
+
+✨ Algorithms
+
+Regression (output = continuous value)
+
+Linear Regression → predicts based on straight-line relation.
+
+Ridge Regression → adds penalty to avoid overfitting (too much learning).
+
+Lasso Regression → like ridge, but can shrink useless features to zero (auto feature selection).
+
+👉 Example: Predicting house price based on size, location.
+
+Classification (output = categories)
+
+Logistic Regression → predicts probability of classes (spam / not spam).
+
+Decision Trees → splits data into a tree structure based on feature values.
+
+Random Forests → many decision trees combined (ensemble method).
+
+Support Vector Machines (SVMs) → finds the best line/hyperplane to separate classes.
+
+k-Nearest Neighbors (k-NN) → looks at nearest neighbors to decide class.
+
+✅ Applications
+
+Spam detection (email).
+
+Image recognition (cat vs dog).
+
+Medical diagnosis (disease prediction).
+
+Financial forecasting (stock price trend).
+
+🔹 2. Unsupervised Learning
+
+Works on unlabeled data (no correct outputs given).
+
+Goal: Find patterns, groups, or structures in data.
+
+✨ Algorithms
+
+Clustering (grouping data by similarity)
+
+k-Means → divides data into k groups.
+
+Hierarchical Clustering → builds a tree of clusters.
+
+DBSCAN → groups based on density of data points.
+
+Dimensionality Reduction (reduce features while keeping info)
+
+PCA (Principal Component Analysis) → transforms data into fewer uncorrelated features.
+
+t-SNE → reduces data dimensions while keeping clusters visible in low-dim space.
+
+Association Rule Learning
+
+Finds relationships between items.
+
+Apriori Algorithm → finds frequent itemsets.
+
+Eclat Algorithm → faster frequent itemset mining.
+
+✅ Applications
+
+Customer segmentation (grouping shoppers).
+
+Fraud / anomaly detection.
+
+Market basket analysis (Amazon: “People who bought X also bought Y”).
+
+Data compression.
+
+🔹 3. Semi-Supervised Learning
+
+Uses a small amount of labeled data + a large amount of unlabeled data.
+
+Useful when labeling data is expensive (like medical images).
+
+✨ Algorithms
+
+Self-Training → model learns from labeled data, then labels some unlabeled, retrains.
+
+Co-Training → two models trained on different feature sets label data for each other.
+
+Graph-Based Methods → build a graph of similarities and propagate labels.
+
+✅ Applications
+
+Text classification (spam detection with few labeled emails).
+
+Image classification (medical images with few labels).
+
+Speech recognition.
+
+Web content classification.
+
+🔹 4. Reinforcement Learning (RL)
+
+The model (called Agent) interacts with an Environment.
+
+The agent takes Actions, receives Rewards, and learns a Policy (strategy) to maximize long-term reward.
+
+Key Terms
+
+Agent = learner (robot, software).
+
+Environment = world around agent.
+
+Action = choice agent makes.
+
+Reward = feedback (good/bad points).
+
+Policy = rules agent follows to pick actions.
+
+✨ Algorithms
+
+Q-Learning → learns value of actions in each state.
+
+Deep Q-Network (DQN) → combines Q-learning + deep neural networks.
+
+Policy Gradient Methods → directly optimize strategy.
+
+Actor-Critic Methods → use both policy (actor) + value function (critic).
+
+✅ Applications
+
+Game playing (Chess, Go, Dota 2).
+
+Robotics (navigation, grasping objects).
+
+Self-driving cars.
+
+Recommendation systems (optimize suggestions).
+
+🔹 5. Comparison of ML Types (Exam Point of View)
+🟢 Supervised vs Unsupervised
+
+Supervised → needs labeled data, tasks: regression/classification.
+
+Unsupervised → no labels, tasks: clustering/association.
+
+🟢 Semi-Supervised vs Supervised
+
+Semi-supervised uses both labeled & unlabeled → saves labeling effort.
+
+Supervised uses only labeled → expensive if labels are scarce.
+
+🟢 Reinforcement vs Supervised
+
+RL → learns by trial & error, long-term rewards, sequential decisions.
+
+Supervised → learns from fixed labeled data, single-step prediction.
+
+🔹 6. Choosing the Right Type
+
+Data Availability → Do you have labels?
+
+Problem Type → Prediction? Clustering? Decision-making?
+
+Complexity vs Interpretability → Simple vs complex models.
+
+Resources → Some (like RL, Deep Learning) need high computational power.
+
+👉 Examples:
+
+Supervised → Predicting customer churn.
+
+Unsupervised → Customer segmentation.
+
+Semi-Supervised → Classifying medical scans with few labels.
+
+RL → Training a drone to fly.
+
+✅ Exam-Oriented Summary
+
+If asked “Types of Machine Learning,” answer:
+
+Supervised → Labeled data, regression & classification, applications in spam detection, medical diagnosis.
+
+Unsupervised → Unlabeled data, clustering & dimensionality reduction, applications in customer segmentation, fraud detection.
+
+Semi-Supervised → Mix of labeled + unlabeled, used in text, image, speech classification.
+
+Reinforcement Learning → Agent-environment interaction, trial & error, applications in robotics, games, autonomous vehicles.
