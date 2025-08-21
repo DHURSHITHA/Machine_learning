@@ -196,3 +196,158 @@ Applications.
 Advantages & Limitations.
 
 Example (like spam filtering).
+
+
+
+
+
+🌳 Decision Trees (Basics → Advanced)
+1. What is a Decision Tree?
+
+A Decision Tree is a supervised learning algorithm used for Classification and Regression.
+
+Supervised → You give input data with labels (like student marks + Pass/Fail).
+
+Tree-like structure → Looks like a flowchart with questions → answers → outcomes.
+
+👉 Example:
+Imagine you want to decide whether to play cricket today.
+
+Root Question: Is it raining?
+
+Yes → Leaf: Don’t play.
+
+No → Next Question: Is the ground wet?
+
+Yes → Leaf: Don’t play.
+
+No → Leaf: Play cricket!
+
+This simple decision-making process is how decision trees work.
+
+2. Terminologies
+
+Root Node → Starting point (whole dataset).
+
+Decision Node → A node where a condition/question is asked.
+
+Leaf/Terminal Node → Final output (Yes/No, Pass/Fail, etc.).
+
+Branch/Sub-tree → Path from root to a leaf.
+
+Parent & Child Node → A node splits into child nodes.
+
+Pruning → Cutting unnecessary branches to avoid overfitting.
+
+3. How a Decision Tree Works
+
+Start at the root node with all data.
+
+Pick the best feature (question) to split data → based on Impurity measures (like Gini or Entropy).
+
+Split into subsets (branches).
+
+Repeat step 2 for each branch until:
+
+Pure class (all samples same)
+
+No features left
+
+Or stopping criteria reached (max depth, min samples).
+
+The last nodes are Leaf nodes (predictions).
+
+4. Assumptions in Decision Trees
+
+Binary Splits → Each split is Yes/No type.
+
+Recursive Partitioning → Repeatedly divide data.
+
+Feature Independence → Features are considered independent.
+
+Homogeneity → Aim for similar data in a node.
+
+Top-Down Greedy → Always pick the best split at that step (not globally best).
+
+Handles categorical & numerical features.
+
+Sensitive to overfitting, outliers, and sample size.
+
+5. Impurity Measures
+
+To decide the “best split,” we need metrics:
+
+Entropy (Information Gain) → Measures disorder. Lower entropy → better split.
+
+Gini Index → Measures probability of wrong classification. Lower Gini → better split.
+
+👉 Example:
+If we have students labeled Pass and Fail:
+
+Before split: Mixed → High entropy.
+
+After split: Pure groups (all Pass in one, all Fail in another) → Low entropy.
+
+6. Advantages & Disadvantages
+
+✅ Easy to understand and interpret.
+✅ Handles both categorical and numerical data.
+✅ No need for scaling/normalization.
+
+❌ Overfits easily.
+❌ Sensitive to outliers.
+❌ Can create biased trees if dataset is unbalanced.
+
+🌲 Random Forest (Ensemble Method)
+1. What is Random Forest?
+
+Random Forest = Many Decision Trees combined.
+It’s an ensemble algorithm → combines results of multiple models to improve accuracy.
+
+Instead of one decision tree, it builds many trees.
+
+Each tree is trained on:
+
+Random subset of data (Bagging method).
+
+Random subset of features.
+
+Final prediction:
+
+Classification → Majority voting (most common output among trees).
+
+Regression → Average of outputs.
+
+👉 Example:
+Think of asking 10 doctors for advice instead of just 1. Final decision = majority opinion = more reliable.
+
+2. Working of Random Forest
+
+Take dataset.
+
+Pick random samples with replacement (bootstrap sampling).
+
+Train a decision tree on each sample, but only with a random subset of features.
+
+Combine results of all trees.
+
+This randomness prevents overfitting and improves generalization.
+
+3. Random Forest vs Decision Tree
+Feature	Decision Tree	Random Forest
+Model type	Single tree	Many trees (ensemble)
+Overfitting	High chance	Reduced
+Accuracy	Lower	Higher
+Speed	Faster	Slower (many trees)
+Output	Rules from one tree	Majority vote / average
+📝 Exam-Oriented Summary
+
+Decision Tree: Root → split using impurity → repeat → leaf nodes.
+
+Impurity measures: Gini, Entropy.
+
+Pruning: Removes unnecessary nodes → avoids overfitting.
+
+Random Forest: Ensemble of trees using bagging + random feature selection.
+
+Advantages: Handles both regression & classification, reduces overfitting, improves accuracy.
