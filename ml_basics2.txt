@@ -22,34 +22,6 @@ Recommendation Systems: Suggesting movies, books, etc.
 
 Bayes’ theorem is a formula for finding the posterior probability:
 
-𝑃
-(
-𝐶
-∣
-𝑋
-)
-=
-𝑃
-(
-𝑋
-∣
-𝐶
-)
-⋅
-𝑃
-(
-𝐶
-)
-𝑃
-(
-𝑋
-)
-P(C∣X)=
-P(X)
-P(X∣C)⋅P(C)
-	​
-
-
 Where:
 
 P(C|X): Posterior → Probability of class 
@@ -75,65 +47,12 @@ It updates our belief about the class after seeing the evidence.
 
 3. The "Naive" Assumption
 
-Normally, 
-𝑃
-(
-𝑋
-∣
-𝐶
-)
 P(X∣C) could be very complex because 
 𝑋
 X may have many features.
 Naive Bayes assumes features are independent given the class.
 
 That means:
-
-𝑃
-(
-𝑋
-∣
-𝐶
-)
-=
-𝑃
-(
-𝑥
-1
-∣
-𝐶
-)
-⋅
-𝑃
-(
-𝑥
-2
-∣
-𝐶
-)
-⋅
-…
-⋅
-𝑃
-(
-𝑥
-𝑛
-∣
-𝐶
-)
-P(X∣C)=P(x
-1
-	​
-
-∣C)⋅P(x
-2
-	​
-
-∣C)⋅…⋅P(x
-n
-	​
-
-∣C)
 
 This simplifies computation drastically.
 
@@ -180,28 +99,6 @@ Computed using Bayes’ formula.
 Decision Rule:
 
 Choose class with highest posterior:
-
-𝐶
-^
-=
-arg
-⁡
-max
-⁡
-𝐶
-𝑃
-(
-𝐶
-∣
-𝑋
-)
-C
-^
-=arg
-C
-max
-	​
-
 P(C∣X)
 6. Implementation Steps
 Data Preprocessing
