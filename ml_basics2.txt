@@ -1,0 +1,301 @@
+📘 Naive Bayes Classifier (From Scratch → Advanced)
+1. Introduction
+
+What is it?
+Naive Bayes is a supervised learning algorithm based on Bayes’ theorem.
+It is called "naive" because it assumes that all features are independent of each other (which is rarely true in real life, but still works surprisingly well).
+
+Purpose:
+Given some input features, it predicts the probability of each possible class and chooses the class with the highest probability.
+
+Applications:
+
+Text Classification: Spam detection, sentiment analysis.
+
+Medical Diagnosis: Predicting diseases from symptoms.
+
+Recommendation Systems: Suggesting movies, books, etc.
+
+✅ Why important? Because it is fast, simple, and works well for text/categorical data.
+
+2. Bayes’ Theorem (The Core)
+
+Bayes’ theorem is a formula for finding the posterior probability:
+
+𝑃
+(
+𝐶
+∣
+𝑋
+)
+=
+𝑃
+(
+𝑋
+∣
+𝐶
+)
+⋅
+𝑃
+(
+𝐶
+)
+𝑃
+(
+𝑋
+)
+P(C∣X)=
+P(X)
+P(X∣C)⋅P(C)
+	​
+
+
+Where:
+
+P(C|X): Posterior → Probability of class 
+𝐶
+C given data 
+𝑋
+X. (What we want to find!)
+
+P(X|C): Likelihood → Probability of seeing data 
+𝑋
+X if the class is 
+𝐶
+C.
+
+P(C): Prior → Probability of class 
+𝐶
+C before seeing data.
+
+P(X): Evidence → Probability of the data overall (normalization factor).
+
+🔑 Intuition:
+It updates our belief about the class after seeing the evidence.
+
+3. The "Naive" Assumption
+
+Normally, 
+𝑃
+(
+𝑋
+∣
+𝐶
+)
+P(X∣C) could be very complex because 
+𝑋
+X may have many features.
+Naive Bayes assumes features are independent given the class.
+
+That means:
+
+𝑃
+(
+𝑋
+∣
+𝐶
+)
+=
+𝑃
+(
+𝑥
+1
+∣
+𝐶
+)
+⋅
+𝑃
+(
+𝑥
+2
+∣
+𝐶
+)
+⋅
+…
+⋅
+𝑃
+(
+𝑥
+𝑛
+∣
+𝐶
+)
+P(X∣C)=P(x
+1
+	​
+
+∣C)⋅P(x
+2
+	​
+
+∣C)⋅…⋅P(x
+n
+	​
+
+∣C)
+
+This simplifies computation drastically.
+
+4. Types of Naive Bayes
+
+Gaussian Naive Bayes
+
+For continuous features.
+
+Assumes features follow a Normal distribution.
+
+Example: Predicting height/weight distribution of males vs females.
+
+Multinomial Naive Bayes
+
+For discrete features (like word counts).
+
+Example: Text classification (word frequencies in emails).
+
+Bernoulli Naive Bayes
+
+For binary features (0/1 presence of word).
+
+Example: Whether a word (“offer”) appears in spam or not.
+
+5. Mathematical Formulation
+
+Prior Probability (P(C))
+
+Probability of each class in training data.
+
+Example: 60% spam emails, 40% non-spam.
+
+Likelihood (P(X|C))
+
+Probability of feature values given class.
+
+Example: Probability that word “free” appears in spam.
+
+Posterior (P(C|X))
+
+Computed using Bayes’ formula.
+
+Decision Rule:
+
+Choose class with highest posterior:
+
+𝐶
+^
+=
+arg
+⁡
+max
+⁡
+𝐶
+𝑃
+(
+𝐶
+∣
+𝑋
+)
+C
+^
+=arg
+C
+max
+	​
+
+P(C∣X)
+6. Implementation Steps
+Data Preprocessing
+
+Feature scaling: ❌ Not required.
+
+Handle missing values: Use imputation.
+
+Encode categorical variables: One-hot encoding.
+
+Training
+
+Use Scikit-learn (GaussianNB, MultinomialNB, BernoulliNB).
+
+Fit with training data.
+
+Prediction
+
+Use .predict() to classify new data.
+
+Hyperparameters
+
+Smoothing (Laplace smoothing / α):
+Avoids zero probability for unseen words/features.
+(Very important in text classification).
+
+7. Evaluation Metrics
+
+Accuracy → % of correct predictions.
+
+Precision → Of predicted positives, how many are correct?
+
+Recall → Of actual positives, how many did we catch?
+
+F1-score → Balance between precision & recall.
+
+Confusion Matrix → Table of TP, FP, TN, FN.
+
+✅ Use cross-validation (like k-fold) to ensure generalization.
+
+8. Advantages
+
+Simple, easy, and fast.
+
+Works well with large datasets and high-dimensional data (like text).
+
+Handles categorical features very well.
+
+Can work with missing/irrelevant features.
+
+9. Limitations
+
+Independence assumption is often false in real-world data.
+
+Doesn’t perform well when features are correlated.
+
+Less powerful than advanced models (e.g., Random Forest, Neural Networks).
+
+10. Practical Considerations
+
+Imbalanced Data: Adjust priors or thresholds.
+
+Feature Engineering: Choose useful features, remove noisy ones.
+
+Interpretability: Easy to explain because it gives probabilities.
+
+11. Real-World Applications
+
+Text Classification: Spam filtering, sentiment analysis.
+
+Healthcare: Disease prediction from symptoms.
+
+Finance: Fraud detection, credit risk scoring.
+
+12. Conclusion
+
+Naive Bayes is based on Bayes’ theorem + independence assumption.
+
+It is simple yet powerful, especially in text classification.
+
+Works best for categorical data and situations where speed is important.
+
+Limitations: Doesn’t capture correlations well, so not always best for complex data.
+
+✅ Exam Tip: Always write:
+
+Definition + Formula.
+
+Assumptions.
+
+Types (Gaussian, Multinomial, Bernoulli).
+
+Applications.
+
+Advantages & Limitations.
+
+Example (like spam filtering).
