@@ -351,3 +351,153 @@ Pruning: Removes unnecessary nodes → avoids overfitting.
 Random Forest: Ensemble of trees using bagging + random feature selection.
 
 Advantages: Handles both regression & classification, reduces overfitting, improves accuracy.
+
+
+
+
+
+
+1. What is Regression?
+
+Regression is a statistical + machine learning method that finds the relationship between variables.
+
+It predicts a continuous value (numbers, not categories).
+
+👉 Example:
+
+Predicting house price based on size, location, and number of rooms.
+
+Predicting salary based on years of experience.
+
+Dependent variable (output) = the value we want to predict (Y).
+
+Independent variable(s) (input features) = the factors we use to predict (X).
+
+2. Key Terms in Regression
+
+Dependent Variable (Y) → The target (e.g., House Price).
+
+Independent Variables (X) → Predictors (e.g., Size, Rooms).
+
+Regression Coefficients (β₀, β₁, β₂… ) → Numbers that represent how much each X affects Y.
+
+Regression Line → Best-fit line that represents the relationship.
+
+Residuals → Difference between actual and predicted values.
+
+Residual = Actual – Predicted.
+
+Loss Function → Formula to measure error.
+
+MSE (Mean Squared Error) = average of squared residuals.
+
+MAE (Mean Absolute Error) = average of absolute residuals.
+
+Overfitting → Model is too complex, memorizes data, performs badly on new data.
+
+Underfitting → Model is too simple, cannot capture patterns.
+
+Regularization → Techniques (like Ridge, Lasso) to reduce overfitting by penalizing large coefficients.
+
+3. Types of Regression Algorithms
+
+Linear Regression
+
+Decision Tree Regression
+
+Support Vector Regression (SVR)
+
+Lasso Regression
+
+Random Forest Regression
+
+Let’s start with Linear Regression (the most fundamental one).
+
+4. Linear Regression
+
+Linear Regression assumes the relationship between variables is linear (a straight line).
+
+y = dependent variable (house price).
+
+x = independent variable (house size).
+
+β₀ = intercept (base value when x=0).
+
+β₁ = slope (how much y changes when x increases by 1).
+
+ε = error term (random variation not explained by x).
+
+Example 1: Simple Linear Regression
+
+Dataset: House size (sq ft) vs Price.
+
+Suppose after training, we get
+
+
++$100 for each sq. ft.
+
++$20,000 for each bedroom
+
++$30,000 if location is better
+
+👉 This is Multiple Linear Regression (more than 1 predictor).
+
+Types of Relationships
+
+Positive Linear Relationship → X ↑, Y ↑
+(e.g., more study hours → higher marks).
+
+Negative Linear Relationship → X ↑, Y ↓
+(e.g., more exercise → lower body fat).
+
+Finding the Best Fit Line
+
+We try many possible lines → choose the one with minimum error.
+
+Error measured using Cost Function (commonly MSE).
+
+Optimization method: Gradient Descent (iteratively adjusts β₀, β₁… to minimize error).
+
+5. Pros & Cons of Linear Regression
+
+✅ Pros:
+
+Simple and easy to implement.
+
+Works well for linearly related data.
+
+Fast and efficient.
+
+❌ Cons:
+
+Very sensitive to outliers (extreme values affect the line).
+
+Assumes a linear relationship, but real-world data may not be linear.
+
+Can overfit with too many predictors.
+
+6. Extensions of Linear Regression
+
+Polynomial Regression → If relationship is curved, we add powers of x.
+
+Ridge Regression → Penalizes large coefficients (reduces overfitting).
+
+Lasso Regression → Shrinks some coefficients to 0 (helps in feature selection).
+
+📝 Exam-Oriented Summary
+
+Regression = predicting continuous values (e.g., price, salary).
+
+Key terms: Dependent/Independent vars, Coefficients, Residuals, Loss function.
+
+Types:
+
+Simple Linear Regression (1 predictor).
+
+Multiple Linear Regression (many predictors).
+
+Error Measurement: MSE, MAE.
+
+Problems: Overfitting, Underfitting, Outliers.
+
+Solutions: Regularization (Ridge, Lasso).
